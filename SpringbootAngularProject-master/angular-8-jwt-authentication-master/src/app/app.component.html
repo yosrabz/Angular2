@@ -1,0 +1,57 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Qatar2020</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home" routerLinkActive="active"> Home </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/add" class="nav-link" routerLink="add" routerLinkActive="active">add Matchs</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/add2" class="nav-link" routerLink="add2" routerLinkActive="active">add Equipes</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/matchs" class="nav-link" routerLink="matchs" routerLinkActive="active">List Matchs</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/equipes" class="nav-link" routerLink="equipes" routerLinkActive="active">List equipes</a>
+      </li>
+      <li class="nav-item">
+        <a href="/matchs" class="nav-link" *ngIf="isLoggedIn" routerLink="matchs" routerLinkActive="active">List Matchs</a>
+      </li>
+      <li class="nav-item">
+        <a href="/equipes" class="nav-link" *ngIf="isLoggedIn" routerLink="equipes" routerLinkActive="active">List equipes</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+ 
+<div class="container">
+  <br>
+  <h3 style="text-align: center;">{{title}}</h3>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

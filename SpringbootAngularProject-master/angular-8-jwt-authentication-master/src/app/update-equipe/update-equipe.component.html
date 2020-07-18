@@ -1,0 +1,18 @@
+<h3>Update Equipes</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="equipe.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="name">age</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="equipe.age" name="age">
+    </div>
+    <div class="form-group">
+      <label for="name">Drapeau</label>
+      <input type="text" class="form-control" id="drapeau" required [(ngModel)]="equipe.drapeau" name="drapeau">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

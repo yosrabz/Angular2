@@ -1,0 +1,20 @@
+<h2>Equipe Details</h2> 
+
+<hr/>
+<div *ngIf="equipe">
+  <div>
+    <label><b>First Name: </b></label> {{equipe.name}}
+  </div>
+  <div>
+    <label><b>Age: </b></label> {{equipe.age}}
+  </div>
+  <div>
+    <img src="{{equipe.drapeau}}" width="100" height="100">
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Equipe List</button><br>
+
+
